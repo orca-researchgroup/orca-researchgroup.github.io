@@ -172,7 +172,7 @@
       /* Researchers grid */
       #researchers .people-grid {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1.5rem 2rem;
         align-items: start;
       }
@@ -261,8 +261,10 @@
         <h2 id="researchers-title">Researchers</h2>
         <div class="people-grid">
           <article class="person">
-            <img src="team/marco_larranaga.png" alt="Photo of Marco Larrañaga">
-            <p class="name"><strong>Marco Larrañaga</strong></p>
+            <a href="team/marco_larranaga.html">
+              <img src="team/marco_larranaga.png" alt="Photo of Marco Larrañaga">
+            </a>
+            <p class="name"><a href="team/marco_larranaga.html"><strong>Marco Larrañaga</strong></a></p>
             <p class="role">Post Doctoral Scholar</p>
             <p class="affiliation">COAPS, FSU</p>
             <p class="email"><a href="mailto:marco.larranaga@fsu.edu">marco.larranaga@fsu.edu</a></p>
@@ -282,6 +284,29 @@
     </footer>
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
+      (function() {
+        var host = location.host || '';
+        if (host.indexOf('127.0.0.1:3000') !== -1) {
+          var style = document.createElement('style');
+          style.setAttribute('data-preview-fix', 'true');
+          style.textContent = `
+            /* Preview-only fixes to ensure Researchers content is visible */
+            #researchers, #researchers * { visibility: visible !important; opacity: 1 !important; }
+            #researchers .people-grid {
+              display: grid !important;
+              grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+              gap: 1.5rem 2rem !important;
+            }
+            @media (max-width: 720px) {
+              #researchers .people-grid { grid-template-columns: 1fr !important; }
+            }
+            #researchers .person { display: block !important; position: static !important; z-index: auto !important; }
+            #researchers .person img { display: block !important; height: auto !important; max-width: 220px !important; }
+            #researchers .person p { display: block !important; }
+          `;
+          document.head.appendChild(style);
+        }
+      })();
     </script>
   </body>
   </html>
