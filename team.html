@@ -169,6 +169,39 @@
         outline-color: transparent !important;
         border-color: transparent !important;
       }
+      /* Researchers grid */
+      #researchers .people-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem 2rem;
+        align-items: start;
+      }
+      @media (max-width: 720px) {
+        #researchers .people-grid { grid-template-columns: 1fr; }
+      }
+      #researchers .person {
+        text-align: center;
+      }
+      #researchers .person img {
+        display: block;
+        width: 100%;
+        max-width: 220px;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 8px;
+        margin: 0 auto .5rem;
+      }
+      #researchers .person p {
+        margin: .15rem 0;
+      }
+      #researchers .person .name {
+        font-weight: 700;
+      }
+      /* Ensure text is visible regardless of preview styles */
+      #researchers, #researchers h2, #researchers .person, #researchers .person p, #researchers .person .name {
+        color: #000 !important;
+      }
+      #researchers .person .email a { color: #1b5fff !important; }
       /* Nuke any borders/backgrounds inside sections (preview extensions) */
       main section *,
       main section *::before,
@@ -226,8 +259,16 @@
 
       <section id="researchers" aria-labelledby="researchers-title">
         <h2 id="researchers-title">Researchers</h2>
-        <p>Introduce your principal investigators, research scientists, and collaborators.</p>
-        <!-- Add researcher profiles here -->
+        <div class="people-grid">
+          <article class="person">
+            <img src="team/marco_larranaga.png" alt="Photo of Marco Larrañaga">
+            <p class="name"><strong>Marco Larrañaga</strong></p>
+            <p class="role">Post Doctoral Scholar</p>
+            <p class="affiliation">COAPS, FSU</p>
+            <p class="email"><a href="mailto:marco.larranaga@fsu.edu">marco.larranaga@fsu.edu</a></p>
+          </article>
+          <!-- Add more people as needed by duplicating the article block -->
+        </div>
       </section>
 
       <section id="students" aria-labelledby="students-title">
