@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Ocean-Atmospheric Responce to Coupled Air-Sea Dynamics Research Group</title>
-    <meta name="description" content="Official website for Orca Research Group">
+    <title>About us — ORCA Research Group</title>
+    <meta name="description" content="About the ORCA Research Group">
     <style>
       :root { color-scheme: light dark; }
       * { box-sizing: border-box; }
@@ -32,24 +32,13 @@
         margin: 0 0 .5rem;
         font-size: clamp(1.25rem, 2.5vw, 2rem);
       }
-      .hero h1 a { color: inherit; text-decoration: none; }
-      .hero h1 a:hover, .hero h1 a:focus { text-decoration: none; }
-      .hero p {
-        margin: 0;
-        opacity: .8;
-      }
-      .hero .banner {
-        width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto 1rem;
-      }
-      /* Brand bar with left-aligned mini banner on colored background */
       .brand-bar {
         background: #216778;
         width: 100%;
-        text-align: left; /* override header centering */
+        text-align: left;
       }
+      .hero h1 a { color: inherit; text-decoration: none; }
+      .hero h1 a:hover, .hero h1 a:focus { text-decoration: none; }
       .header-inner {
         max-width: 1400px;
         min-width: 320px;
@@ -91,7 +80,6 @@
         font-weight: 400;
         text-decoration: none;
       }
-      /* Submenu dropdown */
       .site-nav .submenu {
         position: absolute;
         top: 100%;
@@ -138,7 +126,6 @@
         .site-nav .submenu li + li { border-top-color: rgba(255,255,255,.08); }
         header { background: #121212; }
       }
-      /* On small screens, scale the banner proportionally without fixing height */
       @media (max-width: 600px) {
         .brand-bar img {
           height: auto;
@@ -162,7 +149,12 @@
         background: transparent !important;
         background-color: transparent !important;
         box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        filter: none !important;
+        -webkit-filter: none !important;
         outline: none !important;
+        outline-color: transparent !important;
+        border-color: transparent !important;
       }
       section:target,
       #about:target, #people:target, #researchers:target, #students:target {
@@ -170,7 +162,31 @@
         background: transparent !important;
         background-color: transparent !important;
         box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        filter: none !important;
+        -webkit-filter: none !important;
         outline: none !important;
+        outline-color: transparent !important;
+        border-color: transparent !important;
+      }
+      /* Nuke any borders/backgrounds inside sections (preview extensions) */
+      main section *,
+      main section *::before,
+      main section *::after {
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        filter: none !important;
+        -webkit-filter: none !important;
+        outline: none !important;
+        outline-color: transparent !important;
+        border-color: transparent !important;
+      }
+      /* Force white background for content sections */
+      main section,
+      #about, #people, #researchers, #students {
+        background: #fff !important;
       }
       footer {
         text-align: center;
@@ -193,7 +209,7 @@
         <h1><a href="index.html" rel="home">The Ocean-Atmospheric Responce to Coupled Air-sea dynamics Research Group</a></h1>
         <nav class="site-nav" aria-label="Primary">
           <ul>
-            <li><a href="about.html">About us</a></li>
+            <li><a href="about.html" aria-current="page">About us</a></li>
             <li>
               <a href="team.html">Our Team</a>
               <ul class="submenu" aria-label="Our Team submenu">
@@ -201,13 +217,28 @@
                 <li><a href="team.html#students">Students</a></li>
               </ul>
             </li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html#research">Research</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
           </ul>
         </nav>
       </div>
     </header>
-    <main></main>
+    <main>
+      <section id="about" aria-labelledby="about-title">
+        <h2 id="about-title">About us</h2>
+        <p>
+            We are a multidisciplinary research group withmembers from diverse countries and scientific backgrounds, united by a shared interest in understanding air-sea interactions.
+            Our work combines in-situ measurements, satellite observations, and numerical simulations to investigate how the ocean, atmosphere, and gravity waves interact across a wide range of spatial and temporal scales, from (sub)mesoscale processes to basin-scale circulation.
+            Through this integrated approach, we aim to advance fundamental knowledge of coupled ocean-atmosphere dynamics and their role in shaping our environment.
+        </p>
+        <h2>Our mission</h2>
+        <p>
+            We are a multidisciplinary research group with members from diverse countries and scientific backgrounds, united by a shared interest in understanding air-sea interactions.
+            Our work combines in-situ measurements, satellite observations, and numerical simulations to investigate how the ocean, atmosphere, and gravity waves interact across a wide range of spatial and temporal scales, from (sub)mesoscale processes to basin-scale circulation.
+            Through this integrated approach, we aim to advance fundamental knowledge of coupled ocean-atmosphere dynamics and their role in shaping our environment.
+        </p>
+      </section>
+    </main>
     <footer>
       <small>&copy; <span id="year"></span> ORCA Research Group</small>
     </footer>

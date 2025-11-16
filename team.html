@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Ocean-Atmospheric Responce to Coupled Air-Sea Dynamics Research Group</title>
-    <meta name="description" content="Official website for Orca Research Group">
+    <title>Our Team — ORCA Research Group</title>
+    <meta name="description" content="Meet the ORCA Research Group team: researchers and students">
     <style>
       :root { color-scheme: light dark; }
       * { box-sizing: border-box; }
@@ -32,24 +32,13 @@
         margin: 0 0 .5rem;
         font-size: clamp(1.25rem, 2.5vw, 2rem);
       }
-      .hero h1 a { color: inherit; text-decoration: none; }
-      .hero h1 a:hover, .hero h1 a:focus { text-decoration: none; }
-      .hero p {
-        margin: 0;
-        opacity: .8;
-      }
-      .hero .banner {
-        width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto 1rem;
-      }
-      /* Brand bar with left-aligned mini banner on colored background */
       .brand-bar {
         background: #216778;
         width: 100%;
-        text-align: left; /* override header centering */
+        text-align: left;
       }
+      .hero h1 a { color: inherit; text-decoration: none; }
+      .hero h1 a:hover, .hero h1 a:focus { text-decoration: none; }
       .header-inner {
         max-width: 1400px;
         min-width: 320px;
@@ -91,7 +80,6 @@
         font-weight: 400;
         text-decoration: none;
       }
-      /* Submenu dropdown */
       .site-nav .submenu {
         position: absolute;
         top: 100%;
@@ -138,7 +126,6 @@
         .site-nav .submenu li + li { border-top-color: rgba(255,255,255,.08); }
         header { background: #121212; }
       }
-      /* On small screens, scale the banner proportionally without fixing height */
       @media (max-width: 600px) {
         .brand-bar img {
           height: auto;
@@ -162,7 +149,12 @@
         background: transparent !important;
         background-color: transparent !important;
         box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        filter: none !important;
+        -webkit-filter: none !important;
         outline: none !important;
+        outline-color: transparent !important;
+        border-color: transparent !important;
       }
       section:target,
       #about:target, #people:target, #researchers:target, #students:target {
@@ -170,7 +162,26 @@
         background: transparent !important;
         background-color: transparent !important;
         box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        filter: none !important;
+        -webkit-filter: none !important;
         outline: none !important;
+        outline-color: transparent !important;
+        border-color: transparent !important;
+      }
+      /* Nuke any borders/backgrounds inside sections (preview extensions) */
+      main section *,
+      main section *::before,
+      main section *::after {
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        filter: none !important;
+        -webkit-filter: none !important;
+        outline: none !important;
+        outline-color: transparent !important;
+        border-color: transparent !important;
       }
       footer {
         text-align: center;
@@ -195,19 +206,36 @@
           <ul>
             <li><a href="about.html">About us</a></li>
             <li>
-              <a href="team.html">Our Team</a>
+              <a href="team.html" aria-current="page">Our Team</a>
               <ul class="submenu" aria-label="Our Team submenu">
                 <li><a href="team.html#researchers">Researchers</a></li>
                 <li><a href="team.html#students">Students</a></li>
               </ul>
             </li>
-            <li><a href="#research">Research</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html#research">Research</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
           </ul>
         </nav>
       </div>
     </header>
-    <main></main>
+    <main>
+      <section id="people" aria-labelledby="people-title">
+        <h2 id="people-title">Our Team</h2>
+        <p>Learn more about our researchers and students below.</p>
+      </section>
+
+      <section id="researchers" aria-labelledby="researchers-title">
+        <h2 id="researchers-title">Researchers</h2>
+        <p>Introduce your principal investigators, research scientists, and collaborators.</p>
+        <!-- Add researcher profiles here -->
+      </section>
+
+      <section id="students" aria-labelledby="students-title">
+        <h2 id="students-title">Students</h2>
+        <p>Introduce graduate and undergraduate students involved in the group.</p>
+        <!-- Add student profiles here -->
+      </section>
+    </main>
     <footer>
       <small>&copy; <span id="year"></span> ORCA Research Group</small>
     </footer>
