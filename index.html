@@ -6,12 +6,14 @@
     <title>The Ocean-Atmospheric Responce to Coupled Air-Sea Dynamics Research Group</title>
     <meta name="description" content="Official website for Orca Research Group">
     <style>
-      :root { color-scheme: light dark; }
+      :root { color-scheme: light; }
       * { box-sizing: border-box; }
       body {
         margin: 0;
         font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", Arial, "Apple Color Emoji", "Segoe UI Emoji";
         line-height: 1.6;
+        background: #fff;
+        color: #000;
       }
       header {
         padding: 0 1rem 1.5rem;
@@ -124,19 +126,14 @@
       }
       .site-nav .submenu li + li { border-top: 1px solid #eee; }
       @media (prefers-color-scheme: dark) {
-        .site-nav a:hover, .site-nav a:focus { background: #216778; color: #fff; }
+        /* Force light look even in dark mode */
+        header { background: #fff; }
         .site-nav .submenu {
-          background: #1e1e1e;
-          border-color: rgba(255,255,255,.18);
-          box-shadow: 0 4px 16px rgba(0,0,0,.6);
+          background: #fff;
+          border-color: #ccc;
+          box-shadow: 0 4px 16px rgba(0,0,0,.08);
         }
-        .site-nav .submenu a:hover,
-        .site-nav .submenu a:focus {
-          background: #216778;
-          color: #fff;
-        }
-        .site-nav .submenu li + li { border-top-color: rgba(255,255,255,.08); }
-        header { background: #121212; }
+        .site-nav .submenu li + li { border-top-color: #eee; }
       }
       /* On small screens, scale the banner proportionally without fixing height */
       @media (max-width: 600px) {
